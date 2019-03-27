@@ -7,8 +7,8 @@ import * as actions from '../../actions';
 class Signup extends Component {
 
     onSubmit = (formProps) => {
-        console.log(formProps);
-    }
+        this.props.signup(formProps);
+    };
 
     render() {
         const { handleSubmit } = this.props;
@@ -33,6 +33,6 @@ class Signup extends Component {
 }
 
 export default compose(
-    connect(),
+    connect(null, actions),
     reduxForm({ form: 'signup' })
 )(Signup);
